@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jared Quah Foo Zhun - Cybersecurity Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        section {
+            padding: 80px 0;
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+            .project-card h3 {
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+
+            .btn:hover {
+                background: #764ba2;
+            }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .contact-links {
+            text-align: center;
+        }
+
+            .contact-links a {
+                color: #667eea;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 1.1rem;
+            }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jared Quah Foo Zhun</h1>
+            <p class="tagline">Cybersecurity Student | APU | L1 Junior Security Operations Centre Analyst</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm a passionate 2nd Year Cybersecurity student at Asia Pacific University (APU) with a strong interest in information security, network defense, and ethical hacking. Currently developing my skills in threat analysis, vulnerability assessment, and security infrastructure design.</p>
+
+                <p>My academic journey has equipped me with foundational knowledge in network security, cryptography, digital forensics, and risk management. I'm particularly fascinated by penetration testing methodologies and the evolving landscape of cyber threats.</p>
+
+                <p>When I'm not studying, I'm actively pursuing certifications and staying updated with the latest cybersecurity news and technologies. I'm eager to apply my academic knowledge to real-world security challenges and contribute to making digital spaces safer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Super Simple Packet Sniffer</h3>
+                    <p>Python-based Packet Sniffer using scapy .</p>
+                    <a href="#" class="btn">View Report</a>
+                    <a href="#" class="btn">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Network Security</span>
+                <span class="skill-tag">Ethical Hacking</span>
+                <span class="skill-tag">Digital Forensics</span>
+                <span class="skill-tag">Nessus</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Kali Linux</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">Risk Assessment</span>
+                <span class="skill-tag">SIEM Tools</span>
+                <span class="skill-tag">Incident Response</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="mailto:jaredqfz@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/jared-quah-foo-zhun-aa1755304">LinkedIn</a>
+                <a href="https://github.com/jqfz">GitHub</a>
+                <a href="your-resume.pdf">Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jared Quah Foo Zhun. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

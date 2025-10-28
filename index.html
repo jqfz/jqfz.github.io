@@ -93,7 +93,7 @@
         .btn {
             display: inline-block;
             background: #764ba2;
-            color: #764ba2;
+            color: #ffffff;
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
@@ -170,17 +170,17 @@
                 <div class="project-card">
                     <h3>CTF Challenge Walkthrough</h3>
                     <p>Created a CTF challenge and provided the solution in a detailed walkthrough.</p>
-                    <a href="https://github.com/jqfz/jqfz.github.io/blob/main/CTF%20solution.pdf" class="btn" target="_blank">View PDF</a>
+                    <a href="CTF solution.pdf" class="btn" target="_blank">View PDF</a>
                 </div>
                  <div class="project-card">
                     <h3>Research on Enhancing Zero-Trust Architecture</h3>
                     <p>In-depth Research on Reviewing and Improving Zero-Trust Endpoint Verification.</p>
-                    <a href="https://github.com/jqfz/jqfz.github.io/blob/main/Research%20on%20Zero-Trust%20enhancements.pdf" class="btn" target="_blank">View Report</a>
+                    <a href="Research on Zero-Trust enhancements.pdf" class="btn" target="_blank">View Report</a>
                 </div>
                 <div class="project-card">
                     <h3>Working Mail Server on Rocky Linux Via Postfix and Dovecot</h3>
                     <p>Configured a fully functional mail server on Rocky Linux using Postfix for sending emails and Dovecot for retrieving them.</p>
-                    <a href="https://github.com/jqfz/jqfz.github.io/blob/main/Network%20Administration%20Project.pdf" class="btn" target="_blank">View Report</a>
+                    <a href="Network Administration Project.pdf" class="btn" target="_blank">View Report</a>
                 </div>
             </div>
         </div>
@@ -189,45 +189,66 @@
   <!-- Certifications section with external redirect to PDF -->
 <section id="certifications" aria-labelledby="certs-heading">
 <style>
-#certifications { --bg:#ffffff; --card:#12151c; --text:#e6e9ef; --muted:#a7b0c0; --brand:#6aa7ff; --ok:#9ae6b4; --warn:#fbd38d; --ring:#23304a; }
+#certifications { --bg:#0b0d12; --card-gradient: linear-gradient(180deg, #4a64d2 0%, #6a5fd2 100%); --text:#e6e9ef; --muted:#a7b0c0; --brand:#6aa7ff; --ok:#9ae6b4; --warn:#fbd38d; --ring:#23304a; }
 @media (prefers-color-scheme: light) {
-#certifications { --bg:#f7f8fb; --card:#ffffff; --text:#0f1221; --muted:#5b6a82; --brand:#3366ff; --ok:#0e9f6e; --warn:#b7791f; --ring:#d9e2f1; }
+#certifications { --bg:#f7f8fb; --card-gradient: linear-gradient(180deg, #9bb6ff 0%, #5e7aff 100%); --text:#0f1221; --muted:#5b6a82; --brand:#3366ff; --ok:#0e9f6e; --warn:#b7791f; --ring:#d9e2f1; }
 }
-
-/* Removed custom margin to match global section spacing */
-
-
-#certifications { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; color:var(--text); padding:24px 0 80px 0; }
+#certifications { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; color:var(--text); background:var(--bg); padding:3rem 1rem; }
 #certifications .wrap { max-width:1000px; margin:0 auto; }
 #certs-heading { font-size:clamp(1.4rem, 3vw, 2rem); margin:0 0 1rem 0; }
 #certifications .sub { color:var(--muted); margin-bottom:1.5rem; font-size:.95rem; }
-#certifications .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; }
+#certifications .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem; }
 
 
-.cert-card { background:var(--card); border:1px solid var(--ring); border-radius:16px; padding:1rem; transition:transform .2s ease, box-shadow .2s ease; display:flex; flex-direction:column; align-items:center; text-align:center; }
-.cert-card:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.18); border-color:var(--brand); }
+/* Make the gradient fill the entire card; cleaner elevation + spacing */
+.cert-card {
+--grad: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+background: var(--grad);
+border: none;
+border-radius: 20px;
+padding: 1.5rem 1.5rem 1.25rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+min-height: 560px; /* equal heights */
+justify-content: space-between; /* push footer/badges down */
+box-shadow: 0 14px 28px rgba(0,0,0,.18);
+overflow: hidden; /* clip rounded corners */
+position: relative;
+isolation: isolate; /* for pseudo-element layering */
+transition: transform .2s ease, box-shadow .2s ease;
+}
+.cert-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,.22); }
+/* Subtle inner vignette for depth */
+.cert-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), inset 0 -120px 140px rgba(0,0,0,.15); pointer-events:none; }
+/* ensure no child adds its own box background */
+.cert-card * { background: transparent; }
 
 
-.logo { width:100%; max-width:240px; display:flex; align-items:center; justify-content:center; margin-bottom:.75rem; background:transparent; border:none; }
-.logo img { width:80%; height:auto; object-fit:contain; background:transparent; }
+.cert-card:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.25); }
 
 
-.title { font-weight:700; margin-bottom:.25rem; max-width:240px; }
-.issuer { font-size:.92rem; color:var(--muted); margin-bottom:.5rem; max-width:240px; }
+.logo { width: 100%; max-width: 280px; display: flex; align-items: center; justify-content: center; margin: .5rem 0 1rem; }
+.logo img { max-width: 100%; max-height: 88px; width: auto; height: auto; object-fit: contain; }
 
 
-.meta { display:flex; justify-content:center; flex-wrap:wrap; gap:.5rem; margin:.75rem 0 1rem; }
-.badge { font-size:.8rem; padding:.35rem .55rem; border-radius:999px; border:1px solid var(--ring); }
-.badge.ok { border-color:var(--ok); }
-.badge.warn { border-color:var(--warn); }
+.title { font-weight: 800; letter-spacing:.2px; margin-bottom: .25rem; max-width: 28ch; color: #fff; font-size: clamp(1.05rem, 1.4vw, 1.25rem);}
+.issuer { font-size:.95rem; color: rgba(255,255,255,.72); margin-bottom:.5rem; max-width: 32ch; }
 
 
-.desc { font-size:.95rem; line-height:1.5; margin-bottom:1rem; max-width:240px; }
+.meta { display:flex; justify-content:center; flex-wrap:wrap; gap:.6rem; margin: .75rem 0 1.1rem; }
+.badge { font-size:.85rem; padding:.4rem .7rem; border-radius:999px; border:1px solid rgba(255,255,255,.28); color:#fff; background: rgba(255,255,255,.06); backdrop-filter: blur(2px);}
+.badge.ok { border-color: rgba(154,230,180,.6);}
+.badge.warn { border-color: rgba(251,211,141,.6);}
 
 
-.actions { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; }
-#certifications .btn { background:var(--brand); color:white; padding:.55rem .8rem; border-radius:10px; text-decoration:none; font-weight:600; }
-#certifications .btn.ghost { background:transparent; color:var(--brand); border:1px solid var(--brand); }
+.desc { font-size: .98rem; line-height: 1.6; margin: 0 0 1rem; max-width: 40ch; color: #fff; opacity:.95; }
+
+
+.actions { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-top:.5rem;}
+.btn { background: #8aa0ff; color: white; padding: .6rem .9rem; border-radius: 12px; text-decoration:none; font-weight:700; box-shadow: 0 6px 18px rgba(138,160,255,.25);}
+.btn.ghost { background:transparent; color:var(--brand); border:1px solid var(--brand); }
 </style>
 
   <div class="wrap">

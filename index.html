@@ -188,10 +188,11 @@
 
   <!-- Certifications section with external redirect to PDF -->
 <section id="certifications" aria-labelledby="certs-heading">
+  <div class="container"></div>
 <style>
-#certifications { --bg:#0b0d12; --card-gradient: linear-gradient(180deg, #4a64d2 0%, #6a5fd2 100%); --text:#e6e9ef; --muted:#a7b0c0; --brand:#6aa7ff; --ok:#9ae6b4; --warn:#fbd38d; --ring:#23304a; }
+#certifications { --bg:#000000; --card-gradient: linear-gradient(180deg, #4a64d2 0%, #6a5fd2 100%); --text:#e6e9ef; --muted:#a7b0c0; --brand:#6aa7ff; --ok:#9ae6b4; --warn:#fbd38d; --ring:#23304a; }
 @media (prefers-color-scheme: light) {
-#certifications { --bg:#f7f8fb; --card-gradient: linear-gradient(180deg, #9bb6ff 0%, #5e7aff 100%); --text:#0f1221; --muted:#5b6a82; --brand:#3366ff; --ok:#0e9f6e; --warn:#b7791f; --ring:#d9e2f1; }
+#certifications { --bg:#f7f8fb; --card-gradient: linear-gradient(180deg, #9bb6ff 0%, #5e7aff 100%); --text:#ffffff; --muted:#5b6a82; --brand:#3366ff; --ok:#0e9f6e; --warn:#b7791f; --ring:#d9e2f1; }
 }
 #certifications { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; color:var(--text); background:var(--bg); padding:3rem 1rem; }
 #certifications .wrap { max-width:1000px; margin:0 auto; }
@@ -219,6 +220,7 @@ position: relative;
 isolation: isolate; /* for pseudo-element layering */
 transition: transform .2s ease, box-shadow .2s ease;
 }
+
 .cert-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,.22); }
 /* Subtle inner vignette for depth */
 .cert-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), inset 0 -120px 140px rgba(0,0,0,.15); pointer-events:none; }
@@ -253,6 +255,7 @@ transition: transform .2s ease, box-shadow .2s ease;
 
   <div class="wrap">
     <h2 id="certs-heading">Certifications</h2>
+    <style>#certs-heading{color:#fff !important;}</style>
     <p class="sub">A selection of my completed and in-progress cybersecurity certifications.</p>
     <div class="grid">
       <!-- Google -->
@@ -343,7 +346,7 @@ transition: transform .2s ease, box-shadow .2s ease;
           </div>
         </header>
         <div class="meta">
-          <span class="badge ok">In Progress</span>
+          <span class="badge warn">In Progress</span>
           <span class="badge">Target: Nov 2025</span>
         </div>
         <p class="desc">Pursuing Tecforte SOC ELITE Live Certification, 50 hours of SOC Analyst Level 1 shift duty and hands-on training program simulating real-world cybersecurity operations and incident response workflows.</p>
@@ -365,7 +368,7 @@ transition: transform .2s ease, box-shadow .2s ease;
           <span class="badge warn">In Progress</span>
           <span class="badge">Target: Early 2026</span>
         </div>
-        <p class="desc">Studying network security, access control, business continuity and risk assessments.</p>
+        <p class="desc">Developing a strong foundation in core cybersecurity domains, including security principles, network defense, access control, risk management, and incident response. Strengthening ability to apply essential cybersecurity practices to protect digital assets and support secure business operations.</p>
         <div class="actions">
         </div>
       </article>

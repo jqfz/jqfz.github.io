@@ -172,11 +172,6 @@
                     <p>Created a CTF challenge and provided the solution in a detailed walkthrough.</p>
                     <a href="https://github.com/jqfz/jqfz.github.io/blob/main/CTF%20solution.pdf" class="btn" target="_blank">View PDF</a>
                 </div>
-                <div class="project-card">
-                    <h3>Incident Response Documentation</h3>
-                    <p>Comprehensive incident response documentation on Ransomware attack from Google Cybersecurity Professional Certificate activity.</p>
-                    <a href="https://github.com/jqfz/jqfz.github.io/blob/main/incident-reponse-1.pdf" class="btn" target="_blank">View Report</a>
-                </div>
                  <div class="project-card">
                     <h3>Research on Enhancing Zero-Trust Architecture</h3>
                     <p>In-depth Research on Reviewing and Improving Zero-Trust Endpoint Verification.</p>
@@ -190,6 +185,154 @@
             </div>
         </div>
     </section>
+    <!-- Certifications section for a GitHub Pages/portfolio site
+     - Drop this <section> anywhere inside your page <body>
+     - Customize the sample items and links
+     - No external libraries; responsive and accessible
+-->
+
+<section id="certifications" aria-labelledby="certs-heading">
+  <style>
+    /* ---- Certifications section styles (scoped) ---- */
+    #certifications { --bg:#0b0d12; --card:#12151c; --text:#e6e9ef; --muted:#a7b0c0; --brand:#6aa7ff; --ok:#9ae6b4; --warn:#fbd38d; --ring:#23304a; }
+    @media (prefers-color-scheme: light) {
+      #certifications { --bg:#f7f8fb; --card:#ffffff; --text:#0f1221; --muted:#5b6a82; --brand:#3366ff; --ok:#0e9f6e; --warn:#b7791f; --ring:#d9e2f1; }
+    }
+    #certifications { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; color:var(--text); background:var(--bg); padding:3rem 1rem; }
+    #certifications .wrap { max-width:1000px; margin:0 auto; }
+    #certs-heading { font-size:clamp(1.4rem, 3vw, 2rem); margin:0 0 1rem 0; letter-spacing:.2px; }
+    #certifications .sub { color:var(--muted); margin-bottom:1.5rem; font-size:.95rem; }
+    #certifications .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; }
+    .cert-card { background:var(--card); border:1px solid var(--ring); border-radius:16px; padding:1rem; position:relative; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; box-shadow:0 6px 16px rgba(0,0,0,.12); }
+    .cert-card:focus-within, .cert-card:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.18); border-color:var(--brand); }
+    .cert-head { display:flex; align-items:center; gap:.75rem; margin-bottom:.5rem; }
+    .logo { width:36px; height:36px; border-radius:8px; border:1px solid var(--ring); display:grid; place-items:center; background:linear-gradient(180deg, rgba(255,255,255,.06), transparent); overflow:hidden; }
+    .logo img { width:100%; height:100%; object-fit:cover; display:block; }
+    .title { font-weight:700; line-height:1.25; }
+    .issuer { font-size:.92rem; color:var(--muted); }
+    .meta { display:flex; flex-wrap:wrap; gap:.5rem; margin:.75rem 0 1rem; }
+    .badge { display:inline-flex; align-items:center; gap:.4rem; font-size:.8rem; padding:.35rem .55rem; border-radius:999px; border:1px solid var(--ring); background:linear-gradient(180deg, rgba(255,255,255,.04), transparent); }
+    .badge.ok { border-color:color-mix(in oklab, var(--ok) 40%, var(--ring)); }
+    .badge.warn { border-color:color-mix(in oklab, var(--warn) 40%, var(--ring)); }
+    .desc { font-size:.95rem; line-height:1.5; color:var(--text); margin-bottom:1rem; }
+    .actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+    .btn { --btn-bg:var(--brand); --btn-fg:white; display:inline-flex; align-items:center; gap:.5rem; font-weight:600; font-size:.9rem; padding:.55rem .8rem; border-radius:10px; background:var(--btn-bg); color:var(--btn-fg); border:none; text-decoration:none; outline:0; box-shadow:0 4px 12px rgba(51,102,255,.25); }
+    .btn.ghost { background:transparent; color:var(--brand); border:1px solid var(--brand); box-shadow:none; }
+    .btn:focus-visible { outline:2px solid var(--brand); outline-offset:2px; }
+    .id { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.8rem; color:var(--muted); }
+    /* Small print */
+    #certifications .footnote { margin-top:1rem; color:var(--muted); font-size:.85rem; }
+    /* Reduce motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .cert-card { transition:none; }
+    }
+  </style>
+
+  <div class="wrap">
+    <h2 id="certs-heading">Certifications</h2>
+    <p class="sub">A snapshot of credentials and current learning. “Verify” links go to the official credential pages when available.</p>
+
+    <div class="grid" role="list">
+      <!-- Item 1: Google Cybersecurity Professional Certificate (example) -->
+      <article class="cert-card" role="listitem">
+        <header class="cert-head">
+          <div class="logo" aria-hidden="true">
+            <!-- Optional: replace with a 36x36 logo PNG/SVG -->
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <div>
+            <div class="title">Google Cybersecurity Professional Certificate</div>
+            <div class="issuer">Issued by Coursera & Google · <span class="id">Credential link: <span>https://coursera.org/share/8a7e27ad104c90b95c4fa9d083c0953a</span></span></div>
+          </div>
+        </header>
+        <div class="meta">
+          <span class="badge ok" title="Completed">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Completed
+          </span>
+          <span class="badge" title="Issue date">Sep 2025</span>
+        </div>
+        <p class="desc">Completed a multi‑course program covering threat detection, network security, SIEM fundamentals, incident response, and hands‑on labs.</p>
+        <div class="actions">
+          <a class="btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Verify Google Cybersecurity Certificate">Verify</a>
+          <a class="btn ghost" href="#" target="_blank" rel="noopener noreferrer">View syllabus</a>
+        </div>
+      </article>
+
+      <!-- Item 2: Palo Alto Networks (example) -->
+      <article class="cert-card" role="listitem">
+        <header class="cert-head">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+          </div>
+          <div>
+            <div class="title">Palo Alto Networks Cybersecurity Foundation</div>
+            <div class="issuer">Issued by Palo Alto Networks · <span class="id">Credential ID: <span>PAL-5678</span></span></div>
+          </div>
+        </header>
+        <div class="meta">
+          <span class="badge ok" title="Completed">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Completed
+          </span>
+          <span class="badge" title="Issue date">Jan 2025</span>
+        </div>
+        <p class="desc">Fundamentals of network security, firewalls, and threat prevention; included practical labs using vendor tooling.</p>
+        <div class="actions">
+          <a class="btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Verify Palo Alto Networks certificate">Verify</a>
+        </div>
+      </article>
+
+      <!-- Item 3: ISC2 CC (in progress example) -->
+      <article class="cert-card" role="listitem">
+        <header class="cert-head">
+          <div class="logo" aria-hidden>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4l-10 5Z"/></svg>
+          </div>
+          <div>
+            <div class="title">ISC2 Certified in Cybersecurity (CC)</div>
+            <div class="issuer">Issued by ISC2 · <span class="id">Status: Candidate</span></div>
+          </div>
+        </header>
+        <div class="meta">
+          <span class="badge warn" title="In progress">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M1 21h22L12 2 1 21zm12-3h-2v2h2v-2zm0-6h-2v5h2v-5z"/></svg>
+            In progress
+          </span>
+          <span class="badge" title="Target date">Target: Dec 2025</span>
+        </div>
+        <p class="desc">Studying network security, access control, security operations, and risk concepts; pairing learning with lab write‑ups.</p>
+        <div class="actions">
+          <a class="btn ghost" href="#" target="_blank" rel="noopener noreferrer">Study notes</a>
+        </div>
+      </article>
+
+      <!-- Template: duplicate and edit for more items -->
+      <!--
+      <article class="cert-card" role="listitem">
+        <header class="cert-head">
+          <div class="logo"><img src="PATH_TO_LOGO" alt="Issuer logo"></div>
+          <div>
+            <div class="title">CERT NAME</div>
+            <div class="issuer">Issued by ISSUER · <span class="id">Credential ID: XYZ</span></div>
+          </div>
+        </header>
+        <div class="meta">
+          <span class="badge ok">Completed</span>
+          <span class="badge">Mon YYYY</span>
+        </div>
+        <p class="desc">One‑line summary of skills/topics covered.</p>
+        <div class="actions">
+          <a class="btn" href="VERIFY_URL" target="_blank" rel="noopener noreferrer">Verify</a>
+        </div>
+      </article>
+      -->
+    </div>
+
+    <p class="footnote">Tip: Avoid exposing personal data (phone, address) in public repos. Link to LinkedIn or a contact form instead.</p>
+  </div>
+</section>
+
 
     <section id="skills">
         <div class="container">
@@ -197,7 +340,9 @@
             <div class="skills-container">
                 <span class="skill-tag">Network Security</span>
                 <span class="skill-tag">Nessus</span>
-                <span class="skill-tag">Digital Forensics</span>
+                <span class="skill-tag">Governance, Risk & Compliance</span>
+                <span class="skill-tag">ISO 27001</span>
+                <span class="skill-tag">NIST</span>
                 <span class="skill-tag">Linux</span>
                 <span class="skill-tag">Wireshark</span>
                 <span class="skill-tag">Risk Assessment</span>

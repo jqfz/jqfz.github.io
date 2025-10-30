@@ -26,11 +26,19 @@
       --gap: 24px;
     }
 
+    html, body { height: 100%; }
     body {
       font-family: 'Arial', sans-serif;
       line-height: 1.6;
       color: var(--text);
       background-color: var(--page);
+      min-height: 100vh; /* fallback */
+      min-height: 100svh; /* modern dynamic viewport to avoid extra pane on mobile */
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      /* Reserve space for fixed footer so it doesn't overlap content */
+      padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
     }
     html { scroll-behavior: smooth; }
     a { color: var(--brand-1); }
@@ -95,13 +103,15 @@
             opacity: 0.9;
         }
 
-        section {
+    section {
             padding: 80px 0;
             background: white;
             margin: 20px 0;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+  /* Remove extra gap above the footer */
+  section:last-of-type { margin-bottom: 0; }
 
     h2 {
       text-align: center;
@@ -124,6 +134,7 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: var(--gap);
       padding: 0 20px;
+      align-items: stretch; /* ensure equal height per row so CTAs align */
     }
 
     .project-card {
@@ -136,6 +147,8 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      align-items: center; /* center content horizontally */
+      text-align: center;  /* center text */
     }
 
     .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.12); }
@@ -146,6 +159,7 @@
         align-items: center;
         gap: 10px;
         margin-bottom: 6px;
+        justify-content: center; /* center icon + title */
       }
 
       /* Project type icons */
@@ -162,7 +176,7 @@
       .project-card h3 .ico.project { color: var(--brand-2); }
 
   .project-card p { color: var(--muted); line-height: 1.7; }
-  .project-card .btn { align-self: flex-start; margin-top: auto; }
+  .project-card .btn { align-self: center; margin-top: auto; }
 
     .btn {
       display: inline-block;
@@ -223,15 +237,20 @@
       text-align: center;
     }
 
-    .skill-tag::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, var(--brand-1) 0%, var(--brand-2) 70%);
-      box-shadow: 0 0 0 2px rgba(102,126,234,.15);
-      flex: 0 0 8px;
-    }
+    /* Icons inside skill tags */
+    .skill-tag .ico { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 18px; color: var(--brand-1); }
+    .skill-tag .ico svg { width: 18px; height: 18px; fill: currentColor; }
+    /* Optional per-skill hues */
+    .ico.netsec{ color:#2563eb; }
+    .ico.nessus{ color:#0ea5e9; }
+    .ico.grc{ color:#7c3aed; }
+    .ico.iso{ color:#059669; }
+    .ico.nist{ color:#475569; }
+    .ico.linux{ color:#111827; }
+    .ico.wireshark{ color:#0ea5e9; }
+    .ico.risk{ color:#ea580c; }
+    .ico.siem{ color:#16a34a; }
+    .ico.ir{ color:#b91c1c; }
 
     .skill-tag:hover {
       transform: translateY(-2px);
@@ -312,11 +331,17 @@
       background: #fffbeb;
     }
 
-        footer {
+    footer {
             text-align: center;
-            padding: 20px;
+      padding: 20px 16px;
             background: #333;
             color: white;
+      margin-top: auto;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
         }
 
     /* Certifications unified styles */
@@ -384,7 +409,7 @@
 
   #certifications .desc { color: var(--text); font-size: 1rem; line-height: 1.7; margin-bottom: 16px; }
 
-    #certifications .actions { display: flex; gap: 10px; justify-content: center; }
+  #certifications .actions { display: flex; gap: 10px; justify-content: center; margin-top: auto; }
     #certifications .btn { box-shadow: 0 6px 18px rgba(118,75,162,.18); }
     </style>
 </head>
@@ -663,16 +688,73 @@
             <h2>Skills</h2>
       <p class="section-subtitle">Tools and domains I use regularly.</p>
             <div class="skills-container">
-                <span class="skill-tag">Network Security</span>
-                <span class="skill-tag">Nessus</span>
-                <span class="skill-tag">Governance, Risk & Compliance</span>
-                <span class="skill-tag">ISO 27001</span>
-                <span class="skill-tag">NIST</span>
-                <span class="skill-tag">Linux</span>
-                <span class="skill-tag">Wireshark</span>
-                <span class="skill-tag">Risk Assessment</span>
-                <span class="skill-tag">SIEM Tools</span>
-                <span class="skill-tag">Incident Response</span>
+                <span class="skill-tag"><span class="ico netsec" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2 19 6v6c0 5-3.5 9.5-7 10-3.5-.5-7-5-7-10V6l7-4Z"/>
+                    <path d="M10.5 13.5 8.2 11.2 6.8 12.6 10.3 16.1 16.3 10.1 14.9 8.7 10.5 13.1Z" fill="#fff"/>
+                  </svg>
+                </span>Network Security</span>
+
+                <span class="skill-tag"><span class="ico nessus" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9"/>
+                    <circle cx="12" cy="12" r="5" fill="#fff"/>
+                    <circle cx="12" cy="12" r="2"/>
+                  </svg>
+                </span>Nessus</span>
+
+                <span class="skill-tag"><span class="ico grc" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 12h2v7h3v2H8v-2h3v-7z"/>
+                    <path d="M7 9 4 14h6L7 9zm10 0-3 5h6l-3-5z"/>
+                    <path d="M12 3h2l3 7h-2l-1-2-1 2h-2l3-7z"/>
+                  </svg>
+                </span>Governance, Risk & Compliance</span>
+
+                <span class="skill-tag"><span class="ico iso" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10" cy="9" r="4"/>
+                    <path d="M14 13 10 21l-2-3-3 2 4-8"/>
+                  </svg>
+                </span>ISO 27001</span>
+
+                <span class="skill-tag"><span class="ico nist" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v12h14V6H5z"/>
+                    <path d="M7 8h6v2H7V8zm0 4h10v2H7v-2z"/>
+                  </svg>
+                </span>NIST</span>
+
+                <span class="skill-tag"><span class="ico linux" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 5h18v14H3V5zm2 2v10h14V7H5z"/>
+                    <path d="M7 9l3 3-3 3 1.4 1.4 4.4-4.4-4.4-4.4L7 9zm6 6h4v-2h-4v2z"/>
+                  </svg>
+                </span>Linux</span>
+
+                <span class="skill-tag"><span class="ico wireshark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-2 2.2A8 8 0 0 0 4.2 10H10V4.2zM10 12H4.2A8 8 0 0 0 10 19.8V12zm2 7.8A8 8 0 0 0 19.8 12H12v7.8zM12 10h7.8A8 8 0 0 0 12 4.2V10z"/>
+                  </svg>
+                </span>Wireshark</span>
+
+                <span class="skill-tag"><span class="ico risk" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 21h22L12 2 1 21zm12-3h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+                  </svg>
+                </span>Risk Assessment</span>
+
+                <span class="skill-tag"><span class="ico siem" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 9h2v10H5V9zm6-6h2v16h-2V3zm6 8h2v8h-2v-8z"/>
+                  </svg>
+                </span>SIEM Tools</span>
+
+                <span class="skill-tag"><span class="ico ir" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6V11c0-3.07-1.63-5.64-4.5-6.32V4a1.5 1.5 0 0 0-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                  </svg>
+                </span>Incident Response</span>
             </div>
         </div>
     </section>
@@ -735,7 +817,7 @@
         </a>
 
         <!-- Resume (add your PDF link and remove the badge) -->
-        <a role="listitem" class="contact-card" href="#" aria-label="Resume PDF link not yet provided" aria-disabled="true">
+        <a role="listitem" class="contact-card" href="resume portfolio.pdf" aria-label="Resume PDF link" aria-disabled="true">
           <span class="icon resume" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6Zm2 18H8V4h5v5h5v11ZM9 13h6v2H9v-2Zm0 4h6v2H9v-2Z"/>
@@ -743,9 +825,8 @@
           </span>
           <div>
             <div class="label">Resume</div>
-            <small>PDF link coming soon</small>
+            <small>View my Resume</small>
           </div>
-          <span class="badge-soon">Add link</span>
         </a>
       </div>
         </div>
